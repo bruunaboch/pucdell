@@ -1,0 +1,18 @@
+public class Transacoes {
+	
+	//componentes da data da transacao
+	int dia;
+	int mes;
+	int ano;
+	//demais dados da transacao
+	String tipo; //receita ou despesa
+	String categoria; //ex: salario, alimentacao, casa, energia
+	String descricao; //detalhamento
+	double valor = 0;
+	
+	//formata a data, para economizar linhas de codigo
+	String dataFormatada() {
+		
+		return String.format("%d/%d/%d", dia, mes, ano);
+	}
+}
