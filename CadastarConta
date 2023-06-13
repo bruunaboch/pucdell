@@ -1,0 +1,8 @@
+public class CadastrarConta {
+	
+	//usuario fornece essas informacoes
+	int banco;
+	int agencia;
+	int numConta;
+	double saldo = 0.00;
+}
