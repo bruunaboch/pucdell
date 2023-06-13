@@ -1,0 +1,153 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class SistemaCompleto {
+
+	public static void main(String[] args) {
+		
+		Scanner teclado = new Scanner(System.in);
+		
+		//cadastra a conta c1 (pre-definida, como pedido no enunciado)
+		CadastrarConta c1 = new CadastrarConta();
+		c1.banco = 001;
+		c1.agencia = 1234;
+		c1.numConta = 123456789;
+		c1.saldo = 0.00;
+		
+		//converte os dados de int e double para string
+		String banco1 = Integer.toString(c1.banco);
+		String agencia1 = Integer.toString(c1.agencia);
+		String numConta1 = Integer.toString(c1.numConta);
+		String saldo1 = Double.toString(c1.saldo);
+		
+		ArrayList<String> listaC1 = new ArrayList<>();
+		//salva numa lista os dados da conta
+		listaC1.add(banco1);
+		listaC1.add(agencia1);
+		listaC1.add(numConta1);
+		listaC1.add(saldo1);
+		
+		//cadastra a conta c2 (pre-definida, como pedido no enunciado)
+		CadastrarConta c2 = new CadastrarConta();
+		c2.banco = 001;
+		c2.agencia = 4321;
+		c2.numConta = 987654321;
+		c2.saldo = 0.00;
+		
+		//converte os dados de int e double para string
+		String banco2 = Integer.toString(c2.banco);
+		String agencia2 = Integer.toString(c2.agencia);
+		String numConta2 = Integer.toString(c2.numConta);
+		String saldo2 = Double.toString(c2.saldo);
+		
+		ArrayList<String> listaC2 = new ArrayList<>();
+		//salva numa lista os dados da conta
+		listaC2.add(banco2);
+		listaC2.add(agencia2);
+		listaC2.add(numConta2);
+		listaC2.add(saldo2);
+		
+		//Lista colocada fora do Switch pois mais de uma opcao a manipula
+		ArrayList<String> listaC3 = new ArrayList<>();
+		
+		//menu de funcionalidades do banco
+		System.out.println("------------- MENU -------------");
+		System.out.println("Qual operacao voce deseja utilizar?");
+		System.out.println("1 - Cadastrar conta");
+		System.out.println("2 - Remover conta");
+		System.out.println("3 - Mesclar contas");
+		System.out.println("4 - Extrato da conta");
+		System.out.println("5 - Incluir transacao");
+		System.out.println("6 - Editar ultima transacao");
+		System.out.println("7 - Transferir fundos");
+		System.out.println("--------------------------------");
+		
+		int opcao = teclado.nextInt();
+		
+		switch(opcao) {
+		
+		case 1: //cadastrar conta
+			CadastrarConta c3 = new CadastrarConta();
+			System.out.println("Digite os 3 digitos do seu banco: ");
+			c3.banco = teclado.nextInt();
+			System.out.println("Digite os 4 digitos da sua agencia: ");
+			c3.agencia = teclado.nextInt();
+			System.out.println("Digite os 9 digitos da sua conta: ");
+			c3.numConta = teclado.nextInt();
+			c3.saldo = 0.00;
+			
+			//converte os dados de int e double para string
+			String banco3 = Integer.toString(c3.banco);
+			String agencia3 = Integer.toString(c3.agencia);
+			String numConta3 = Integer.toString(c3.numConta);
+			String saldo3 = Double.toString(c3.saldo);
+			
+			//salva numa lista os dados da conta
+			listaC3.add(banco3);
+			listaC3.add(agencia3);
+			listaC3.add(numConta3);
+			listaC3.add(saldo3);
+			
+			System.out.println(" ");
+			System.out.println("CONTA CADASTRADA COM SUCESSO!");
+			System.out.println("--------------------------------");
+			System.out.println("Banco: " + c3.banco);
+			System.out.println("Agencia: " + c3.agencia);
+			System.out.println("Numero da conta: " + c3.numConta);
+			System.out.println("Saldo: R$" + c3.saldo);
+			System.out.println("--------------------------------");
+			System.out.println(" ");
+			break;
+			
+		case 2: //remover conta
+			System.out.println("Qual conta voce deseja excluir? 1, 2 ou 3?");
+			int contaExcluir = teclado.nextInt();
+			System.out.println("Esta ciente de que todos os dados da conta serao excluidos?\n 1- Sim\n 2- Nao");
+			int ciente = teclado.nextInt();
+			
+			if(contaExcluir == 1 && ciente == 1) {
+				listaC1.clear();
+				System.out.println("CONTA 1 EXCLUIDA COM SUCESSO!");
+			}
+			else if(contaExcluir == 2 && ciente == 1) {
+				listaC2.clear();
+				System.out.println("CONTA 2 EXCLUIDA COM SUCESSO!");
+			}
+			else if(contaExcluir == 3 && ciente == 1) {
+				listaC3.clear();
+				System.out.println("CONTA 3 EXCLUIDA COM SUCESSO!");
+			}
+			//se o usuario nao digitar nenhuma das combinacoes acima, nenhuma conta sera excluida
+			else {
+				System.out.println("CONTA NAO EXCLUIDA!");
+			}
+			
+			break;
+			
+		case 3: //mesclar contas
+			break;
+		
+		case 4: //extrato da conta
+			break;
+			
+		case 5: //incluir transacao
+			break;
+			
+		case 6: //editar a ultima transacao
+			break;
+			
+		case 7: //transferir fundos
+			break;
+			
+		default:
+			System.out.println("Opcao invalida!");
+			break;
+			
+			}
+		
+		//para de capturar as informacoes do teclado
+		teclado.close();
+		
+	}
+
+}
