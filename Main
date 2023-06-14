@@ -12,7 +12,7 @@ public class SistemaCompleto {
 		c1.banco = 001;
 		c1.agencia = 1234;
 		c1.numConta = 123456789;
-		c1.saldo = 0.00;
+		c1.saldo = 256.30;
 		
 		//converte os dados de int e double para string
 		String banco1 = Integer.toString(c1.banco);
@@ -32,7 +32,7 @@ public class SistemaCompleto {
 		c2.banco = 001;
 		c2.agencia = 4321;
 		c2.numConta = 987654321;
-		c2.saldo = 0.00;
+		c2.saldo = 897.26;
 		
 		//converte os dados de int e double para string
 		String banco2 = Integer.toString(c2.banco);
@@ -47,10 +47,22 @@ public class SistemaCompleto {
 		listaC2.add(numConta2);
 		listaC2.add(saldo2);
 		
+		double saldoTotal = c1.saldo + c2.saldo;
+		
 		//Lista colocada fora do Switch pois mais de uma opcao a manipula
 		ArrayList<String> listaC3 = new ArrayList<>();
 		
-		//menu de funcionalidades do banco
+		//funcionalidade 3
+		System.out.println(" ");
+		System.out.println("------------- PAINEL GERAL -------------");
+		System.out.println("Resumo das contas: ");
+		System.out.println("Resumo de receitas e despesas do mes: ");
+		System.out.println("Saldo geral dos ultimos 6 meses: ");
+		System.out.println("Saldo atual: " + saldoTotal);
+		System.out.println("--------------------------------");
+		System.out.println(" ");
+		
+		//menu de funcionalidades do banco (funcionalidades 1 e 2)
 		System.out.println("------------- MENU -------------");
 		System.out.println("Qual operacao voce deseja utilizar?");
 		System.out.println("1 - Cadastrar conta");
@@ -97,6 +109,7 @@ public class SistemaCompleto {
 			System.out.println("Saldo: R$" + c3.saldo);
 			System.out.println("--------------------------------");
 			System.out.println(" ");
+			saldoTotal = saldoTotal + c3.saldo;
 			break;
 			
 		case 2: //remover conta
